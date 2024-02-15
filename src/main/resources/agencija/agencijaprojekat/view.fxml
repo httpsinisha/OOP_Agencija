@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:id="borderpane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="agencija.agencijaprojekat.Controller">
+   <left>
+      <AnchorPane fx:id="left" prefHeight="600.0" prefWidth="500.0" style="-fx-background-color: #008da1;" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fx:id="pocetna_slika" fitHeight="427.0" fitWidth="437.0" layoutX="37.0" layoutY="111.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../back.PNG" />
+               </image>
+            </ImageView>
+            <Label layoutX="135.0" layoutY="60.0" text="AGENCIJA" textFill="WHITE">
+               <font>
+                  <Font name="Monospaced Regular" size="48.0" />
+               </font>
+               <effect>
+                  <DropShadow />
+               </effect>
+            </Label>
+            <Label layoutX="161.0" layoutY="530.0" text="Copyright (c). All Rights Reserved." textFill="WHITE" />
+         </children>
+      </AnchorPane>
+   </left>
+   <right>
+      <AnchorPane fx:id="right" prefHeight="600.0" prefWidth="500.0" BorderPane.alignment="CENTER">
+         <children>
+            <AnchorPane fx:id="anchorpane_prijava" layoutX="57.0" layoutY="32.0">
+               <children>
+                  <Label layoutY="68.0" text="Prijavi se">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="prijava_korisnicko_ime_label" layoutY="149.0" text="KORISNIČKO IME">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="prijava_lozinka_label" layoutY="248.0" text="LOZINKA">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="prijava_korisnicko_ime_textfield" layoutY="185.0" onAction="#prijava_prijavi_se_dugme_klik" prefHeight="42.0" prefWidth="387.0" promptText="KORISNIČKO IME" />
+                  <TextField fx:id="prijava_lozinka_textfield" layoutY="289.0" onAction="#prijava_prijavi_se_dugme_klik" prefHeight="42.0" prefWidth="387.0" promptText="LOZINKA" />
+                  <PasswordField fx:id="prijava_lozinka_passwordfield" layoutY="289.0" onAction="#prijava_prijavi_se_dugme_klik" prefHeight="42.0" prefWidth="387.0" promptText="LOZINKA" />
+                  <Button fx:id="prijava_prijavi_se_dugme" layoutY="378.0" mnemonicParsing="false" onAction="#prijava_prijavi_se_dugme_klik" prefHeight="42.0" prefWidth="387.0" style="-fx-background-color: #008da1;" text="PRIJAVI SE" textFill="WHITE">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Button>
+                  <CheckBox fx:id="prijava_prikazi_lozinku" layoutY="342.0" mnemonicParsing="false" onAction="#prijava_prikazi_lozinku_klik" text="Prikaži lozinku" />
+                  <Label fx:id="prijava_lozinka_label1" layoutX="115.0" layoutY="468.0" text="Nemaš račun?">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="prijava_registruj_se_dugme" layoutX="216.0" layoutY="466.0" mnemonicParsing="false" onAction="#prijava_registruj_se_dugme_klik" style="-fx-background-color: #008da1;" text="REGISTRUJ SE" textFill="WHITE">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Button>
+                  <Button fx:id="prijava_izadji_dugme" layoutX="387.0" mnemonicParsing="false" onAction="#prijava_izadji_dugme_klik" style="-fx-background-color: FF725E;" text="x" textFill="WHITE">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Button>
+                  <Label fx:id="prijava_greska_label" alignment="CENTER" contentDisplay="CENTER" layoutX="39.0" layoutY="430.0" prefHeight="17.0" prefWidth="326.0" textAlignment="RIGHT" />
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="anchorpane_registracija" layoutX="53.0" layoutY="-22.0" prefHeight="616.0" prefWidth="395.0" visible="false">
+               <children>
+                  <Button fx:id="prijava_izadji_dugme1" layoutX="391.0" layoutY="54.0" mnemonicParsing="false" onAction="#prijava_izadji_dugme_klik" style="-fx-background-color: FF725E;" text="x" textFill="WHITE">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Button>
+                  <Label layoutY="30.0" text="Registruj se">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Label>
+                  <Label layoutY="80.0" text="IME">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="205.0" layoutY="80.0" text="PREZIME">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="registracija_ime" layoutY="100.0" onAction="#registracija_registruj_se_drugme_klik" promptText="IME" />
+                  <TextField fx:id="registracija_prezime" layoutX="205.0" layoutY="100.0" onAction="#registracija_registruj_se_drugme_klik" promptText="PREZIME" />
+                  <Label layoutY="150.0" text="BROJ TELEFONA">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="registracija_broj_telefona" layoutY="170.0" onAction="#registracija_registruj_se_drugme_klik" prefHeight="25.0" prefWidth="354.0" promptText="BROJ TELEFONA" />
+                  <Label layoutY="220.0" text="JMBG">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="registracija_jmbg" layoutY="240.0" onAction="#registracija_registruj_se_drugme_klik" prefHeight="25.0" prefWidth="354.0" promptText="JMBG" />
+                  <Label layoutY="290.0" text="BROJ RAČUNA">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="registracija_broj_racuna" layoutY="310.0" onAction="#registracija_registruj_se_drugme_klik" prefHeight="25.0" prefWidth="354.0" promptText="BROJ RAČUNA" />
+                  <Label layoutY="360.0" text="KORISNIČKO IME">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="registracija_korisnicko_ime" layoutY="380.0" onAction="#registracija_registruj_se_drugme_klik" prefHeight="25.0" prefWidth="354.0" promptText="KORISNIČKO IME" />
+                  <Label layoutY="420.0" text="LOZINKA">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <PasswordField fx:id="registracija_lozinka" layoutY="450.0" onAction="#registracija_registruj_se_drugme_klik" prefHeight="25.0" prefWidth="354.0" promptText="LOZINKA" />
+                  <Label layoutY="490.0" text="POTVRDA LOZINKE">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <PasswordField fx:id="registracija_potvrda_lozinke" layoutY="520.0" onAction="#registracija_registruj_se_drugme_klik" prefHeight="25.0" prefWidth="354.0" promptText="POTVRDA LOZINKE" />
+                  <Button fx:id="registracija_registruj_se_drugme" layoutX="56.0" layoutY="563.0" mnemonicParsing="false" onAction="#registracija_registruj_se_drugme_klik" prefHeight="25.0" prefWidth="251.0" style="-fx-background-color: #008da1;" text="REGISTRUJ SE" textFill="WHITE">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Button>
+                  <Button fx:id="registracija_prijavi_se_dugme" layoutX="324.0" layoutY="589.0" mnemonicParsing="false" onAction="#registracija_prijavi_se_dugme_klik" style="-fx-background-color: #008da1;" text="PRIJAVI SE" textFill="WHITE">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Button>
+                  <Label layoutX="235.0" layoutY="594.0" text="Već imaš račun?" />
+                  <Label fx:id="registracija_greska_label" alignment="CENTER" contentDisplay="CENTER" layoutX="38.0" layoutY="545.0" prefHeight="17.0" prefWidth="292.0" />
+               </children>
+            </AnchorPane>
+         </children></AnchorPane>
+   </right>
+</BorderPane>

@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="700.0" prefWidth="1000.0" style="-fx-background-color: #99b5bf;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="agencija.agencijaprojekat.AdminController">
+   <children>
+      <Button fx:id="admin_izadji_dugme" layoutX="944.0" layoutY="32.0" mnemonicParsing="false" onAction="#admin_izadji_dugme_klik" prefHeight="23.0" prefWidth="22.0" style="-fx-background-color: FF725E;" text="x" textFill="WHITE">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+      <Label fx:id="admin_korisnicko_ime" layoutX="44.0" layoutY="52.0" text="korisnicko ime" />
+      <Label fx:id="admin_ime_prezime" layoutX="43.0" layoutY="67.0" text="ime prezime">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Button fx:id="rezervacije" layoutX="43.0" layoutY="171.0" mnemonicParsing="false" onAction="#rezervacije_klik" prefHeight="62.0" prefWidth="174.0" style="-fx-background-color: #008da1;" text="Rezervacije" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button fx:id="dodaj_izlet" layoutX="43.0" layoutY="253.0" mnemonicParsing="false" onAction="#dodaj_izlet_klik" prefHeight="62.0" prefWidth="174.0" style="-fx-background-color: #008da1;" text="Dodaj izlet/putovanje" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button fx:id="dodaj_admina" layoutX="43.0" layoutY="337.0" mnemonicParsing="false" onAction="#dodaj_admina_klik" prefHeight="62.0" prefWidth="174.0" style="-fx-background-color: #008da1;" text="Dodaj admina" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <AnchorPane fx:id="anchorpane_rezervacije" layoutX="279.0" layoutY="94.0" prefHeight="519.0" prefWidth="603.0">
+         <children>
+            <TabPane fx:id="tabPane1" prefHeight="303.0" prefWidth="602.0" tabClosingPolicy="UNAVAILABLE">
+               <tabs>
+                  <Tab fx:id="jednodnevna" text="Jednodnevna">
+                     <content>
+                        <ListView fx:id="jednodnevna_lista" onMouseClicked="#prikazi_klijent_listu_izlet" prefHeight="200.0" prefWidth="200.0" />
+                     </content>
+                  </Tab>
+                  <Tab fx:id="visednevna" text="Višednevna">
+                     <content>
+                        <ListView fx:id="visednevna_lista" onMouseClicked="#prikazi_klijent_listu_putovanje" prefHeight="200.0" prefWidth="200.0" />
+                     </content>
+                  </Tab>
+               </tabs>
+            </TabPane>
+            <Label layoutX="236.0" layoutY="321.0" text="Zarada agencije:">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="zarada_agencije" alignment="CENTER" layoutX="234.0" layoutY="348.0" prefHeight="27.0" prefWidth="130.0" text="1">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="anchorpane_dodaj_izlet" layoutX="279.0" layoutY="94.0" prefHeight="567.0" prefWidth="627.0" visible="false">
+         <children>
+            <TabPane layoutX="-17.0" layoutY="-56.0" prefHeight="647.0" prefWidth="644.0" tabClosingPolicy="UNAVAILABLE">
+               <tabs>
+                  <Tab text="Izlet">
+                     <content>
+                        <AnchorPane prefHeight="621.0" prefWidth="669.0" style="-fx-background-color: #7aadbf;">
+                           <children>
+                              <Label layoutX="39.0" layoutY="53.0" text="Naziv izleta:" textFill="WHITE">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="42.0" layoutY="157.0" text="Destinacija:" textFill="WHITE">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="39.0" layoutY="261.0" text="Datum polaska:" textFill="WHITE">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="42.0" layoutY="365.0" text="Cijena izleta:" textFill="WHITE">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="izlet_naziv" layoutX="39.0" layoutY="84.0" onAction="#dodaj_izlet">
+                                 <font>
+                                    <Font size="21.0" />
+                                 </font>
+                              </TextField>
+                              <TextField fx:id="izlet_destinacija" layoutX="39.0" layoutY="188.0" onAction="#dodaj_izlet">
+                                 <font>
+                                    <Font size="21.0" />
+                                 </font>
+                              </TextField>
+                              <DatePicker fx:id="izlet_datum" editable="false" layoutX="39.0" layoutY="292.0" prefHeight="45.0" prefWidth="260.0" />
+                              <TextField fx:id="izlet_cijena" layoutX="42.0" layoutY="396.0" onAction="#dodaj_izlet">
+                                 <font>
+                                    <Font size="21.0" />
+                                 </font>
+                              </TextField>
+                              <Button fx:id="rezervacije2" layoutX="235.0" layoutY="527.0" mnemonicParsing="false" onAction="#dodaj_izlet" prefHeight="62.0" prefWidth="174.0" style="-fx-background-color: #008da1;" text="Dodaj" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </Tab>
+                  <Tab text="Putovanje">
+                     <content>
+                        <AnchorPane prefHeight="578.0" prefWidth="644.0" style="-fx-background-color: #7aadbf;">
+                           <children>
+                              <Label layoutX="14.0" layoutY="33.0" text="Naziv putovanja:" textFill="WHITE">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="14.0" layoutY="128.0" text="Destinacija:" textFill="WHITE">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="14.0" layoutY="215.0" text="Datum polaska:" textFill="WHITE">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="305.0" layoutY="385.0" text="Cijena po noćenju:" textFill="WHITE">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="putovanje_naziv" layoutX="14.0" layoutY="60.0" onAction="#dodaj_putovanje" prefHeight="10.0" prefWidth="215.0">
+                                 <font>
+                                    <Font size="21.0" />
+                                 </font>
+                              </TextField>
+                              <TextField fx:id="putovanje_cijena" layoutX="305.0" layoutY="60.0" onAction="#dodaj_putovanje" prefHeight="45.0" prefWidth="215.0">
+                                 <font>
+                                    <Font size="21.0" />
+                                 </font>
+                              </TextField>
+                              <TextField fx:id="putovanje_destinacija" layoutX="14.0" layoutY="155.0" onAction="#dodaj_putovanje" prefHeight="45.0" prefWidth="215.0">
+                                 <font>
+                                    <Font size="21.0" />
+                                 </font>
+                              </TextField>
+                              <TextField fx:id="putovanje_smjestaj" layoutX="305.0" layoutY="155.0" onAction="#dodaj_putovanje" prefHeight="45.0" prefWidth="215.0">
+                                 <font>
+                                    <Font size="21.0" />
+                                 </font>
+                              </TextField>
+                              <TextField fx:id="putovanje_nocenje" layoutX="305.0" layoutY="412.0" onAction="#dodaj_putovanje" prefHeight="45.0" prefWidth="215.0">
+                                 <font>
+                                    <Font size="21.0" />
+                                 </font>
+                              </TextField>
+                              <ComboBox fx:id="putovanje_zvjezdice" layoutX="305.0" layoutY="242.0" prefHeight="45.0" prefWidth="215.0" />
+                              <ComboBox fx:id="putovanje_prevoz" layoutX="14.0" layoutY="412.0" prefHeight="45.0" prefWidth="215.0" />
+                              <ComboBox fx:id="putovanje_sobe" layoutX="305.0" layoutY="327.0" prefHeight="45.0" prefWidth="215.0" />
+                              <DatePicker fx:id="putovanje_polazak" editable="false" layoutX="14.0" layoutY="242.0" prefHeight="45.0" prefWidth="215.0" />
+                              <DatePicker fx:id="putovanje_dolazak" editable="false" layoutX="14.0" layoutY="327.0" prefHeight="45.0" prefWidth="215.0" />
+                              <Label layoutX="14.0" layoutY="297.0" text="Datum povratka:" textFill="WHITE">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="305.0" layoutY="128.0" text="Naziv smještaja:" textFill="WHITE">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="14.0" layoutY="385.0" text="Tip prevoza:" textFill="WHITE">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="305.0" layoutY="215.0" text="Broj zvjezdica smještaja:" textFill="WHITE">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="305.0" layoutY="297.0" text="Vrsta sobe:" textFill="WHITE">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="305.0" layoutY="33.0" text="Cijena aranžmana" textFill="WHITE">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <Button fx:id="rezervacije3" layoutX="194.0" layoutY="510.0" mnemonicParsing="false" onAction="#dodaj_putovanje" prefHeight="62.0" prefWidth="174.0" style="-fx-background-color: #008da1;" text="Dodaj" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </Tab>
+               </tabs>
+            </TabPane>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="anchorpane_dodaj_admina" layoutX="279.0" layoutY="94.0" prefHeight="544.0" prefWidth="639.0" visible="false">
+         <children>
+            <Label layoutX="185.0" layoutY="12.0" text="Ime:" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="185.0" layoutY="132.0" text="Prezime:" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="185.0" layoutY="252.0" text="Korisničko ime:" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <TextField fx:id="ime" layoutX="185.0" layoutY="52.0" onAction="#dodaj_admina_potvrda">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="prezime" layoutX="185.0" layoutY="172.0" onAction="#dodaj_admina_potvrda">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="korisnicko_ime" layoutX="185.0" layoutY="292.0" onAction="#dodaj_admina_potvrda">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </TextField>
+            <Button fx:id="rezervacije4" layoutX="226.0" layoutY="382.0" mnemonicParsing="false" onAction="#dodaj_admina_potvrda" prefHeight="62.0" prefWidth="174.0" style="-fx-background-color: #008da1;" text="Dodaj admina" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+         </children>
+      </AnchorPane>
+      <Label layoutX="98.0" layoutY="427.0" text="Broj admina:" />
+      <Label fx:id="broj_admina" alignment="CENTER" layoutX="72.0" layoutY="446.0" prefHeight="17.0" prefWidth="116.0" text="broj_admina" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Button layoutX="98.0" layoutY="623.0" mnemonicParsing="false" onAction="#odjavi_se_klik" style="-fx-background-color: FF725E;" text="Odjavi se" textFill="WHITE">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+      <Button layoutX="79.0" layoutY="590.0" mnemonicParsing="false" onAction="#promijeniLozinku" prefHeight="20.0" prefWidth="108.0" text="Promijeni lozinku">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+      <AnchorPane fx:id="anchorpane_klijenti" layoutX="279.0" layoutY="94.0" prefHeight="519.0" prefWidth="603.0" style="-fx-background-color: #1dafdb;" visible="false">
+         <children>
+            <ListView fx:id="lista_klijenata" layoutX="5.0" layoutY="65.0" prefHeight="243.0" prefWidth="593.0" />
+            <Label fx:id="naziv_aranzmana" layoutX="5.0" layoutY="14.0" prefHeight="20.0" prefWidth="311.0" text="Naziv aranzmana">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="5.0" layoutY="37.0" prefHeight="17.0" prefWidth="260.0" text="rezervisali su:">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Button layoutX="249.0" layoutY="328.0" mnemonicParsing="false" onAction="#otkazi_aranzman" style="-fx-background-color: FF725E;" text="Otkaži aranžman" textAlignment="CENTER" textFill="WHITE" />
+            <Button fx:id="admin_izadji_dugme1" layoutX="570.0" layoutY="10.0" mnemonicParsing="false" onAction="#izadji_iz_liste_klijenata" prefHeight="25.0" prefWidth="22.0" style="-fx-background-color: FF725E;" text="x" textFill="WHITE" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
